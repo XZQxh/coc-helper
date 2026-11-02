@@ -1,0 +1,16 @@
+[Unit]
+Description=COC Helper QQ bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/COC-helper
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/pi/COC-helper/.venv/bin/python /home/pi/COC-helper/bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
